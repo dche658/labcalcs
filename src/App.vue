@@ -1,8 +1,9 @@
 <template>
-  <div class="border-bottom-2 border-300 m-0 pl-2">
+  <div class="border-bottom-2 border-300 m-0 p-1 pl-2"
+    style="color: #FFFFFF; backgroundColor: var(--blue-800);">
     <h3>
-      <a href="/labcalcs/unitsconversion" style="all: unset; color: var(--text-color)">
-    Chem Path Calculations</a></h3>
+      <a href="/labcalcs/unitsconversion" 
+      style="all: unset;">Chem Path Calculations</a></h3>
   </div>
   <div class="flex grid p-2">
     <div class="col-fixed p-2" style="width: 210px">
