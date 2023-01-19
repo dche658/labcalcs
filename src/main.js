@@ -13,8 +13,8 @@ import Column from 'primevue/column';
 import router from './router';
 
 
-import 'primevue/resources/themes/saga-blue/theme.css';       //theme
-//import 'primevue/resources/themes/bootstrap4-light-blue/theme.css';
+//import 'primevue/resources/themes/saga-blue/theme.css';       //theme
+import 'primevue/resources/themes/bootstrap4-light-blue/theme.css';
 import 'primevue/resources/primevue.min.css';                 //core css
 import 'primeicons/primeicons.css';                           //icons
 import 'primeflex/primeflex.css';

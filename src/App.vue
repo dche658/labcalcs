@@ -7,7 +7,7 @@
   </div>
   <div class="flex grid p-2">
     <div class="col-fixed p-2" style="width: 210px">
-      <PanelMenu :model="items" />
+      <PanelMenu :model="items" v-model:expandedKeys="expandedKeys"/>
     </div>
     <div class="col p-2">
       <router-view />
@@ -23,7 +23,13 @@ export default {
       currentTab: "unitsconversion",
       items: [
       {
-        label:"Units Conversion", to:"/unitsconversion"
+        label:"Utilities",
+        items: [
+          {
+            label:"Units Conversion", to:"/unitsconversion"
+          }
+        ]
+        
       },
       {
         label:"Calculated Tests",
@@ -73,8 +79,12 @@ export default {
         ]
       },
       {
-        label: "About",
-        to: "/about"
+        label:"Help",
+        items:[
+          {
+            label:"About", to:"/about"
+          }
+        ]
       }
       ],
     }
