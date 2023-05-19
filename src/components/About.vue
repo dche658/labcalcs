@@ -35,8 +35,9 @@ export default {
     data() {
         return {
             title: 'About',
-            version: 4.0,
+            version: 4.2,
             changeLog: [
+              {"date":"19/5/2023", "version":"4.2","author":"Doug Chesher","changes":"Fix error thrown in eGFR calculation if age less than 18 years of age"},
               {"date":"10/1/2023", "version":"4.1","author":"Doug Chesher","changes":"Update transferrin molecular mass for transferrin saturation calculation"},
               {"date":"15/3/2022", "version":"4.0","author":"Doug Chesher","changes":"Migrate to Vite with VueJS 3"},
               {"date":"1/12/2021", "version":"3.2","author":"Doug Chesher","changes":"Fixed error in CKD-EPI calculation and add ability to use the 2021 equation"},

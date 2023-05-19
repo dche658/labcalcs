@@ -57,8 +57,8 @@
         <h5>Calculation</h5>
         <p>
         eGFR (mL/min/1.73m<sup>2</sup>) = mu x ((Creatinine<sub>serum</sub> x 0.0113)/kappa)<sup>alpha</sup> x gamma<sup>Age in years</sup> x delta x epsilon</p>
-        <table class="table table-striped">
-        <thead>
+        <table class="tbl-table">
+        <thead class="tbl-thead">
                 <tr>
                     <td>Equation</td>
                     <td>Creatinine (umol/L)</td>
@@ -72,7 +72,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="tbl-tr">
                     <td rowspan="4">2009 Creatinine [1]</td>
                     <td>&leq; 62</td>
                     <td>F</td>
@@ -83,7 +83,7 @@
                     <td>1.018</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr>
+                <tr class="tbl-tr">
                     <td>&gt; 62</td>
                     <td>F</td>
                     <td>141</td>
@@ -93,7 +93,7 @@
                     <td>1.018</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr>
+                <tr class="tbl-tr">
                     <td>&leq; 80</td>
                     <td>M</td>
                     <td>141</td>
@@ -103,7 +103,7 @@
                     <td>1.0</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr>
+                <tr class="tbl-tr">
                     <td>&gt; 80</td>
                     <td>M</td>
                     <td>141</td>
@@ -113,7 +113,7 @@
                     <td>1.0</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr>
+                <tr class="tbl-tr">
                     <td rowspan="4">2021 Creatinine [2]</td>
                     <td>&leq; 62</td>
                     <td>F</td>
@@ -124,7 +124,7 @@
                     <td>1.012</td>
                     <td>-</td>
                 </tr>
-                <tr>
+                <tr class="tbl-tr">
                     <td>&gt; 62</td>
                     <td>F</td>
                     <td>142</td>
@@ -134,7 +134,7 @@
                     <td>1.012</td>
                     <td>-</td>
                 </tr>
-                <tr>
+                <tr class="tbl-tr">
                     <td>&leq; 80</td>
                     <td>M</td>
                     <td>142</td>
@@ -144,7 +144,7 @@
                     <td>1.0</td>
                     <td></td>
                 </tr>
-                <tr>
+                <tr class="tbl-tr">
                     <td>&gt; 80</td>
                     <td>M</td>
                     <td>142</td>
@@ -208,54 +208,58 @@
             egfrCKDEPI() {
                 var egfr, a, mu, kappa, c, d, e;
                 e = 1.0;
-                if (this.equation==="CKD2009CR") {
-                    mu = 141;
-                    c = 0.9929;
-                    if (this.african===1) {
-                        e = 1.159;
+                egfr = "Not available";
+                if (this.age >= 18) {
+                    if (this.equation==="CKD2009CR") {
+                        mu = 141;
+                        c = 0.9929;
+                        if (this.african===1) {
+                            e = 1.159;
+                        }
+                        if (this.gender==="F" && this.creatinineSerum <= 62) {
+                            a=-0.329;
+                            kappa = 0.7;
+                            d = 1.018;
+                        } else if (this.gender==="F" && this.creatinineSerum > 62) {
+                            a=-1.209;
+                            kappa = 0.7;
+                            d = 1.018;
+                        } else if (this.gender==="M" && this.creatinineSerum <=80) {
+                            a=-0.411;
+                            kappa = 0.9;
+                            d = 1.0;
+                        } else if (this.gender==="M" && this.creatinineSerum > 80) {
+                            a=-1.209;
+                            kappa = 0.9;
+                            d = 1.0;
+                        }    
+                    } else if (this.equation==="CKD2021CR") {
+                        mu = 142;
+                        c = 0.9938;
+                        e = 1.0;
+                        if (this.gender==="F" && this.creatinineSerum <= 62) {
+                            a=-0.241;
+                            kappa = 0.7;
+                            d = 1.012;
+                        } else if (this.gender==="F" && this.creatinineSerum > 62) {
+                            a=-1.200;
+                            kappa = 0.7;
+                            d = 1.012;
+                        } else if (this.gender==="M" && this.creatinineSerum <=80) {
+                            a=-0.302;
+                            kappa = 0.9;
+                            d = 1.0;
+                        } else if (this.gender==="M" && this.creatinineSerum > 80) {
+                            a=-1.200;
+                            kappa = 0.9;
+                            d = 1.0;
+                        } 
                     }
-                    if (this.gender==="F" && this.creatinineSerum <= 62) {
-                        a=-0.329;
-                        kappa = 0.7;
-                        d = 1.018;
-                    } else if (this.gender==="F" && this.creatinineSerum > 62) {
-                        a=-1.209;
-                        kappa = 0.7;
-                        d = 1.018;
-                    } else if (this.gender==="M" && this.creatinineSerum <=80) {
-                        a=-0.411;
-                        kappa = 0.9;
-                        d = 1.0;
-                    } else if (this.gender==="M" && this.creatinineSerum > 80) {
-                        a=-1.209;
-                        kappa = 0.9;
-                        d = 1.0;
-                    }    
-                } else if (this.equation==="CKD2021CR") {
-                    mu = 142;
-                    c = 0.9938;
-                    e = 1.0;
-                    if (this.gender==="F" && this.creatinineSerum <= 62) {
-                        a=-0.241;
-                        kappa = 0.7;
-                        d = 1.012;
-                    } else if (this.gender==="F" && this.creatinineSerum > 62) {
-                        a=-1.200;
-                        kappa = 0.7;
-                        d = 1.012;
-                    } else if (this.gender==="M" && this.creatinineSerum <=80) {
-                        a=-0.302;
-                        kappa = 0.9;
-                        d = 1.0;
-                    } else if (this.gender==="M" && this.creatinineSerum > 80) {
-                        a=-1.200;
-                        kappa = 0.9;
-                        d = 1.0;
-                    } 
+                    egfr =mu * ((this.creatinineSerum *  0.0113/kappa)**a) * (c**this.age) * d * e;
+                    egfr = Math.round(egfr);
+                } else {
+                    egfr = "The CKD-EPI equation is only valid for those 18 years and older.";    
                 }
-                if (this.age < 18) throw "The CKD-EPI equation is only valid for those 18 years and older.";
-                egfr =mu * ((this.creatinineSerum *  0.0113/kappa)**a) * (c**this.age) * d * e;
-                egfr = Math.round(egfr);
                 return egfr;
             }
         }
