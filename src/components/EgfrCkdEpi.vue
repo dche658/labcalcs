@@ -57,8 +57,8 @@
         <h5>Calculation</h5>
         <p>
         eGFR (mL/min/1.73m<sup>2</sup>) = mu x ((Creatinine<sub>serum</sub> x 0.0113)/kappa)<sup>alpha</sup> x gamma<sup>Age in years</sup> x delta x epsilon</p>
-        <table class="tbl-table">
-        <thead class="tbl-thead">
+        <table class="displaytable">
+            <thead class="displaytable-thead" >
                 <tr>
                     <td>Equation</td>
                     <td>Creatinine (umol/L)</td>
@@ -71,8 +71,8 @@
                     <td>epsilon</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr class="tbl-tr">
+            <tbody class="displaytable-tbody">
+                <tr>
                     <td rowspan="4">2009 Creatinine [1]</td>
                     <td>&leq; 62</td>
                     <td>F</td>
@@ -83,7 +83,7 @@
                     <td>1.018</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr class="tbl-tr">
+                <tr>
                     <td>&gt; 62</td>
                     <td>F</td>
                     <td>141</td>
@@ -93,7 +93,7 @@
                     <td>1.018</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr class="tbl-tr">
+                <tr>
                     <td>&leq; 80</td>
                     <td>M</td>
                     <td>141</td>
@@ -103,7 +103,7 @@
                     <td>1.0</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr class="tbl-tr">
+                <tr>
                     <td>&gt; 80</td>
                     <td>M</td>
                     <td>141</td>
@@ -113,7 +113,7 @@
                     <td>1.0</td>
                     <td>1.159 if black else 1.0</td>
                 </tr>
-                <tr class="tbl-tr">
+                <tr>
                     <td rowspan="4">2021 Creatinine [2]</td>
                     <td>&leq; 62</td>
                     <td>F</td>
@@ -124,7 +124,7 @@
                     <td>1.012</td>
                     <td>-</td>
                 </tr>
-                <tr class="tbl-tr">
+                <tr>
                     <td>&gt; 62</td>
                     <td>F</td>
                     <td>142</td>
@@ -134,7 +134,7 @@
                     <td>1.012</td>
                     <td>-</td>
                 </tr>
-                <tr class="tbl-tr">
+                <tr>
                     <td>&leq; 80</td>
                     <td>M</td>
                     <td>142</td>
@@ -144,7 +144,7 @@
                     <td>1.0</td>
                     <td></td>
                 </tr>
-                <tr class="tbl-tr">
+                <tr>
                     <td>&gt; 80</td>
                     <td>M</td>
                     <td>142</td>

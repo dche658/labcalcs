@@ -1,17 +1,30 @@
 /* Custom CSS can be placed here */
 
-.tbl-table {
+
+.displaytable {
 	border: 1px solid #ddd;
 	border-collapse: collapse;
 }
-.tbl-thead {
+.displaytable-thead {
 	font-weight: bold;
-	background-color: #eeeeee;
+	background-color: #ddd;
 }
-.tbl-tr {
+.displaytable .displaytable-thead > tr {
 	border-bottom: 1px solid #ddd;
 }
-td {
+.displaytable .displaytable-thead > tr > td {
 	padding: 5px;
+}
+.displaytable-tbody {
+	background-color: #ffffff;
+}
+.displaytable .displaytable-tbody > tr {
+	border-bottom: 1px solid #ddd;
+}
+.displaytable .displaytable-tbody > tr > td {
+	padding: 5px;
+}
+.displaytable .displaytable-tbody > tr:nth-child(even) {
+	background-color: #f8f8f8;
 }
 
