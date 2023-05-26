@@ -171,7 +171,6 @@
 </template>
 
 <script type="text/javascript">
-    
     export default {
         data() {
             return {
@@ -258,7 +257,12 @@
                     egfr =mu * ((this.creatinineSerum *  0.0113/kappa)**a) * (c**this.age) * d * e;
                     egfr = Math.round(egfr);
                 } else {
-                    egfr = "The CKD-EPI equation is only valid for those 18 years and older.";    
+                    egfr = "";
+                    this.$toast.add({ severity: 'warn', 
+                        summary: 'Warning', 
+                        detail: 'The CKD-EPI equation is only valid for those 18 years and older.', 
+                        life: 3000 });
+
                 }
                 return egfr;
             }

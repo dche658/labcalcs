@@ -11,6 +11,8 @@ import Dropdown from 'primevue/dropdown';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import router from './router';
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
 
 
 //import 'primevue/resources/themes/saga-blue/theme.css';       //theme
@@ -22,6 +24,7 @@ import 'primeflex/primeflex.css';
 const app = createApp(App);
 app.use(PrimeVue);
 app.use(router);
+app.use(ToastService);
 
 app.component('Button',Button);
 app.component('Card',Card);
@@ -32,5 +35,6 @@ app.component('Dropdown',Dropdown);
 app.component('PanelMenu',PanelMenu);
 app.component('DataTable',DataTable);
 app.component('Column',Column);
+app.component('Toast',Toast);
 
 app.mount('#app');

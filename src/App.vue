@@ -10,6 +10,7 @@
       <PanelMenu :model="items" v-model:expandedKeys="expandedKeys"/>
     </div>
     <div class="col p-2">
+      <Toast />
       <router-view />
     </div>
   </div>
