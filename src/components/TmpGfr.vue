@@ -42,7 +42,7 @@
                 {{trp}}
             </div>
             <div class="col">
-                
+
             </div>
         </div>
         <div class="field grid">
@@ -56,42 +56,49 @@
         </div>
         <div>
             <p>Olaf Bijvoet [1] devised the ratio of the renal
-tubular maximum reabsorption rate of phosphate to glomerular filtration rate (TmP/GFR)
-to help to distinguish hypercalcaemia due to hyperparathyroidism from other causes of
-hypercalcaemia. Although it has been superseded for this purpose by the measurement of
-plasma intact parathyroid hormone (PTH), it is still clinically useful.</p>
+                tubular maximum reabsorption rate of phosphate to glomerular filtration rate (TmP/GFR)
+                to help to distinguish hypercalcaemia due to hyperparathyroidism from other causes of
+                hypercalcaemia. Although it has been superseded for this purpose by the measurement of
+            plasma intact parathyroid hormone (PTH), it is still clinically useful.</p>
 
-<p>TmP/GFR measures maximum renal tubular phosphate reabsorption in mass per unit volume of glomerular filtrate. It is independent of the two other factors that affect plasma phosphate concentration: the rate of phosphate flow into the extracellular space from gut, cells and bone, and the glomerular filtration rate [2].</p>
+            <p>TmP/GFR measures maximum renal tubular phosphate reabsorption in mass per unit volume of glomerular filtrate. It is independent of the two other factors that affect plasma phosphate concentration: the rate of phosphate flow into the extracellular space from gut, cells and bone, and the glomerular filtration rate [2].</p>
 
-<p>TmP/GFR has replaced earlier indices of renal phosphate handling such as the phosphate excretion index (PEl) and the index of phosphate excretion (IPE) because it alone has a physiological basis.</p>
+            <p>TmP/GFR has replaced earlier indices of renal phosphate handling such as the phosphate excretion index (PEl) and the index of phosphate excretion (IPE) because it alone has a physiological basis.</p>
 
-<p>The tubular reabsorption of phosphate is one minus the fractional excretion of phosphate.</p>
+            <p>The tubular reabsorption of phosphate is one minus the fractional excretion of phosphate.</p>
 
-<p>TRP = 1-((urine phosphate x serum creatinine)/(serum phosphate x urine creatinine)</p>
+            <p>TRP = 1-((urine phosphate x serum creatinine)/(serum phosphate x urine creatinine)</p>
 
-<p>If TRP ≤ 0.86, the patient is on the linear part of the excretion profile and TmP/GFR is equal to TRP x serum phosphate.</p>
+            <p>If TRP ≤ 0.86, the patient is on the linear part of the excretion profile and TmP/GFR is equal to TRP x serum phosphate.</p>
 
-<p>If TRP > 0.86, the patient is on the curvilinear part of the excretion profile and TmP/GFR is equal to (0.3 x TRP x serum phosphate)/(1-(0.8 x TRP)) [3]</p>
-</div>
+            <p>If TRP > 0.86, the patient is on the curvilinear part of the excretion profile and TmP/GFR is equal to (0.3 x TRP x serum phosphate)/(1-(0.8 x TRP)) [3]</p>
+        </div>
 
-<div>
-    <h4>Reference intervals for TmP/GFR from Payne 1998 [2]</h4>
+        <div>
+            <Card style="width: 40em;">
+                <template #title>
+                    Reference Intervals [2]
+                </template>
+                <template #content>
+                    <DataTable :value="refranges" stripedRows class="p-datatable-sm" >
+                        <Column field="age" header="Age"></Column>
+                        <Column field="gender" header="Gender"></Column>
+                        <Column field="range" header="Range (mmol/L)" style="width: 30%;"></Column>
+                    </DataTable>     
+                </template>
+                   
+            </Card>
+            
+        </div>
 
-    <DataTable :value="refranges" class="p-datatable-sm" style="width: 350px;">
-        <Column field="age" header="Age"></Column>
-        <Column field="gender" header="Gender"></Column>
-        <Column field="range" header="Range (mmol/L)" style="width: 80px;"></Column>
-        </DataTable>
-</div>
-
-<div>
-<h4>References</h4>
-<ol>
-    <li>O. L. Bijvoet, D. B. Morgan, and P. Fourman. The assessment of phosphate reabsorption. Clinica Chimica Acta. vol. 26, pp. 15–24, Oct. 1969</li>
-    <li>R. B. Payne. Renal tubular reabsorption of phosphate (TmP/GFR): indications and interpretation. Annals of clinical biochemistry, vol. 35 ( Pt 2), pp. 201–6, Mar. 1998</li>
-    <li>A. P. Kenny and A. C. A. Glen. Tests of phosphate reabsorption. The Lancet, vol. 302, Art. no. 7821, 1973</li>
-</ol>
-</div>
+        <div>
+            <h4>References</h4>
+            <ol>
+                <li>O. L. Bijvoet, D. B. Morgan, and P. Fourman. The assessment of phosphate reabsorption. Clinica Chimica Acta. vol. 26, pp. 15–24, Oct. 1969</li>
+                <li>R. B. Payne. Renal tubular reabsorption of phosphate (TmP/GFR): indications and interpretation. Annals of clinical biochemistry, vol. 35 ( Pt 2), pp. 201–6, Mar. 1998</li>
+                <li>A. P. Kenny and A. C. A. Glen. Tests of phosphate reabsorption. The Lancet, vol. 302, Art. no. 7821, 1973</li>
+            </ol>
+        </div>
         
     </Panel>
 </template>
