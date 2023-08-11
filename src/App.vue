@@ -1,6 +1,5 @@
 <template>
-  <div class="border-bottom-2 border-300 m-0 p-1 pl-2"
-    style="color: #FFFFFF; backgroundColor: var(--blue-800);">
+  <div class="border-bottom-1 border-300 m-0 p-1 pl-2 surface-500">
     <h3>
       <a href="/labcalcs/unitsconversion" 
       style="all: unset;">Chem Path Calculations</a></h3>
