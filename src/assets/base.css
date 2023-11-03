@@ -34,3 +34,7 @@
 .numericfield {
 	width: 100px;
 }
+body {
+	margin: 0px;
+	padding: 0px;
+}
