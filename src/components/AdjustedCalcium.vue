@@ -3,7 +3,7 @@
     <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Total Calcium</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="calcium" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="calcium" size="6"/>
             </div>
             <div class="col">
                 mmol/L
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Albumin</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="albumin" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="albumin" size="6"/>
             </div>
             <div class="col">
                 mmol/L

@@ -3,7 +3,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Iron</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="iron" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="iron" />
             </div>
             <div class="col">
                 umol/L
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Transferrin</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="transferrin" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="transferrin" />
             </div>
             <div class="col">
                 <Dropdown v-model="transferrinUnits" :options="units" optionLabel="name" optionValue="name"/>

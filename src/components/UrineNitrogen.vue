@@ -3,7 +3,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">24h Urine Protein</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="proteinUrine" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="proteinUrine" />
             </div>
             <div class="col">
                 g/24h
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">24h Urine Urea</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="ureaUrine" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="ureaUrine" />
             </div>
             <div class="col">
                 mmol/24h

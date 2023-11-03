@@ -3,7 +3,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Urine Creatinine</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="creatinineUrine" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="creatinineUrine" />
             </div>
             <div class="col">
                 mmol/L
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Serum Creatinine</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="creatinineSerum" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="creatinineSerum"/>
             </div>
             <div class="col">
                 umol/L
@@ -21,7 +21,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Collection Duration</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="timeInterval" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="timeInterval" />
             </div>
             <div class="col">
                 hours
@@ -30,7 +30,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Urine Volumen</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="urineVolume" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="urineVolume" />
             </div>
             <div class="col">
                 mL

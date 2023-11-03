@@ -3,7 +3,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Serum Calcium</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="calciumSerum" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="calciumSerum" size="6"/>
             </div>
             <div class="col">
                 mmol/L
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Urine Calcium</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="calciumUrine" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="calciumUrine" />
             </div>
             <div class="col">
                 mmol/L
@@ -21,7 +21,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Serum Creatinine</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="creatinineSerum" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="creatinineSerum"/>
             </div>
             <div class="col">
                 umol/L
@@ -30,7 +30,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Urine Creatinine</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="creatinineUrine" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="creatinineUrine"/>
             </div>
             <div class="col">
                 mmol/L

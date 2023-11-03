@@ -1,18 +1,19 @@
 <template>
     <Panel header="Convert Units">
         <div class="field grid">
-            <label class="col-fixed" style="width: 150px;">Analyte</label>
+            <label class="col-fixed" style="width: 150px;" for="analytemass">Analyte</label>
             <div class="col-fixed" style="width: 200px">
                 <Dropdown v-model="analyte" :options="analytes" optionLabel="name" optionValue="name"/>
             </div>
             <div class="col">
-                <InputText type="text" class="inputfield" v-model.number="analyteMass" size="6" disabled />
+                <InputText type="text" class="inputfield" v-model.number="analyteMass" size="6" disabled id="analytemass" />
             </div>
         </div>
         <div class="field grid">
-            <label class="col-fixed" style="width: 150px;">Concentration</label>
+            <label class="col-fixed" style="width: 150px;" for="concentration">Concentration</label>
             <div class="col-fixed" style="width: 200px">
-                <InputText type="text" class="inputfield" v-model.number="concentration" size="10"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="concentration" 
+                id="concentration"/>
             </div>
             <div class="col">
                 <Dropdown v-model="fromNumerator" :options="fromNumeratorUnit" optionLabel="name" optionValue="name"/>/<Dropdown v-model="fromDenominator" :options="denominatorUnit" optionLabel="name" optionValue="name"/>

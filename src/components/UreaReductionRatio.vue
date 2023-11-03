@@ -3,7 +3,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Urea Predialysis</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="ureaPredialysis" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="ureaPredialysis" />
             </div>
             <div class="col">
                 mmol/L
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Urea Postdialysis</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="ureaPostdialysis" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="ureaPostdialysis" />
             </div>
             <div class="col">
                 mmol/L

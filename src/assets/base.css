@@ -28,3 +28,9 @@
 	background-color: #f8f8f8;
 }
 
+.footnote {
+	font-size: smaller;
+}
+.numericfield {
+	width: 100px;
+}

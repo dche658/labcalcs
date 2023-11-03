@@ -10,7 +10,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Serum Creatinine</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="creatinineSerum" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="creatinineSerum" />
             </div>
             <div class="col">
                 umol/L
@@ -19,7 +19,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Age</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="age" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="age" />
             </div>
             <div class="col">
                 

@@ -3,7 +3,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Sodium</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="sodium" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="sodium" />
             </div>
             <div class="col">
                 mmol/L
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Urea</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="urea" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="urea" />
             </div>
             <div class="col">
                 mmol/L
@@ -21,16 +21,25 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Glucose</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="glucose" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="glucose" />
             </div>
             <div class="col">
                 mmol/L
             </div>
         </div>
         <div class="field grid">
-            <label class="col-fixed" style="width: 150px;">{{title}}</label>
+            <label class="col-fixed" style="width: 150px;">Ethanol</label>
             <div class="col-fixed" style="width: 120px">
-                {{calcOsmo}}
+                <InputText type="text" class="inputfield numericfield" v-model.number="ethanol" />
+            </div>
+            <div class="col">
+                mmol/L
+            </div>
+        </div>
+        <div class="field grid">
+            <label class="col-fixed" style="width: 150px;">{{ title }}</label>
+            <div class="col-fixed" style="width: 120px">
+                {{ calcOsmo }}
             </div>
             <div class="col">
                 mmol/L
@@ -39,7 +48,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Measured Osmolality</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="osmolality" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="osmolality" />
             </div>
             <div class="col">
                 mmol/kg
@@ -48,32 +57,49 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Osmolar Gap</label>
             <div class="col-fixed" style="width: 120px">
-                {{osmolGap}}
+                {{ osmolGap }}
             </div>
             <div class="col">
                 mmol/L
             </div>
         </div>
     </Panel>
+    <Panel>
+        <h3>Calculations</h3>
+        <p>Calculated osmolarity = (2 x Sodium) + Urea + Glucose + (1.25 x Ethanol)<br />
+            <span class="footnote">With all components measured in mmol/L</span>
+        </p>
+
+        <p>Osmolar Gap = Measured Osmolality - Calculated Osmolarity</p>
+        <p>
+            Reference interval for osmolar gap is 0 - 10. Causes of a raised osmolar
+            gap include high concentrations of ethanol, methanol, ethylene glycol,
+            mannitol or glycine. The osmolar gap may also be high in pseudohyponatraemia
+            caused by very higher serum lipids or serum protein.
+        </p>
+
+
+    </Panel>
 </template>
 <script type="text/javascript">
-    export default {
-        data() {
-            return {
-                title: "Calculated Osmolarity",
-                sodium: 140,
-                urea: 3.8,
-                glucose: 4.5,
-                osmolality: 290
-            }
+export default {
+    data() {
+        return {
+            title: "Calculated Osmolarity",
+            sodium: 140,
+            urea: 3.8,
+            glucose: 4.5,
+            osmolality: 290,
+            ethanol: 0
+        }
+    },
+    computed: {
+        calcOsmo() {
+            return (2 * this.sodium) + this.urea + this.glucose + (1.25 * this.ethanol);
         },
-        computed: {
-            calcOsmo() {
-                return (2*this.sodium) + this.urea + this.glucose;
-            },
-            osmolGap() {
-                return Math.round((this.osmolality - this.calcOsmo)*10)/10;
-            }
+        osmolGap() {
+            return Math.round((this.osmolality - this.calcOsmo) * 10) / 10;
         }
     }
+}
 </script>

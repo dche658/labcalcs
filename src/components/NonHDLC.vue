@@ -3,7 +3,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">Cholesterol</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="cholesterol" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="cholesterol" />
             </div>
             <div class="col">
                 mmol/L
@@ -12,7 +12,7 @@
         <div class="field grid">
             <label class="col-fixed" style="width: 150px;">HDL Cholesterol</label>
             <div class="col-fixed" style="width: 120px">
-                <InputText type="text" class="inputfield" v-model.number="hdl" size="6"/>
+                <InputText type="text" class="inputfield numericfield" v-model.number="hdl" />
             </div>
             <div class="col">
                 mmol/L
