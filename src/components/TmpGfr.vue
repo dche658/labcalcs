@@ -67,7 +67,7 @@
 
             <p>The tubular reabsorption of phosphate is one minus the fractional excretion of phosphate.</p>
 
-            <p>TRP = 1-((urine phosphate x serum creatinine)/(serum phosphate x urine creatinine)</p>
+            <p>TRP = 1-((urine phosphate x serum creatinine)/(serum phosphate x urine creatinine x 1000)</p>
 
             <p>If TRP ≤ 0.86, the patient is on the linear part of the excretion profile and TmP/GFR is equal to TRP x serum phosphate.</p>
 
@@ -77,10 +77,10 @@
         <div>
             <Card style="width: 40em;">
                 <template #title>
-                    Reference Intervals [2]
+                    Reference Intervals [4]
                 </template>
                 <template #content>
-                    <DataTable :value="refranges" stripedRows class="p-datatable-sm" >
+                    <DataTable :value="refranges" stripedRows :size="small" >
                         <Column field="age" header="Age"></Column>
                         <Column field="gender" header="Gender"></Column>
                         <Column field="range" header="Range (mmol/L)" style="width: 30%;"></Column>
@@ -97,6 +97,10 @@
                 <li>O. L. Bijvoet, D. B. Morgan, and P. Fourman. The assessment of phosphate reabsorption. Clinica Chimica Acta. vol. 26, pp. 15–24, Oct. 1969</li>
                 <li>R. B. Payne. Renal tubular reabsorption of phosphate (TmP/GFR): indications and interpretation. Annals of clinical biochemistry, vol. 35 ( Pt 2), pp. 201–6, Mar. 1998</li>
                 <li>A. P. Kenny and A. C. A. Glen. Tests of phosphate reabsorption. The Lancet, vol. 302, Art. no. 7821, 1973</li>
+                <li>The Australian and New Zealand Bone and Mineral Society.
+                <a href="https://www.anzbms.org.au/tmpgfr/tmpgfr-calculator.asp">https://www.anzbms.org.au/tmpgfr/tmpgfr-calculator.asp</a> 
+                Accessed 27 Feb 2024. Reference intervals based on Derain Dubourg L, Aurelle M, Chardon L, Flammier S, Lemoine S, Bacchetta J. Tubular phosphate handling: references from child to adulthood in the era of standardized serum creatinine. Nephrol Dial Transplant. 2022 Oct 19;37(11):2150-2156
+                </li>
             </ol>
         </div>
         
@@ -113,15 +117,10 @@ export default {
             creatinineSerum: 80,
             creatinineUrine: 8.0,
             refranges: [
-              { age: 'Birth', gender: 'Any', range: '1.43-3.43'},
-              { age: '3 months', gender: 'Any', range: '1.48-3.30'},
-              { age: '6 months', gender: 'Any', range: '1.15-2.60'},
-              { age: '2-15 years', gender: 'Any', range: '1.15-2.44'},
-              { age: '25-35 years', gender: 'Male', range: '1.00-1.35'},
-              { age: '25-35 years', gender: 'Female', range: '0.96-1.44'},
-              { age: '45-55 years', gender: 'Male', range: '0.90-1.35'},
-              { age: '45-55 years', gender: 'Female', range: '0.88-1.42'},
-              { age: '65-75 years', gender: 'Any', range: '0.80-1.35'}
+              { age: '0-<13 years', gender: 'Any', range: '1.11-1.70'},
+              { age: '13-<16 years', gender: 'Any', range: '0.87-1.69'},
+              { age: '16-<19 years', gender: 'Any', range: '0.71-1.61'},
+              { age: '>=19 years', gender: 'Any', range: '0.70-1.35'}
             ]
         }
     },
@@ -135,7 +134,7 @@ export default {
          * return TRP tubular reabsorption of phosphate 
          */
         trp() {
-            return Math.round(1000*(1-((this.po4Urine*this.creatinineSerum/1000)/(this.po4Serum*this.creatinineUrine))))/1000;
+            return Math.round(1000*(1-((this.po4Urine*this.creatinineSerum)/(this.po4Serum*this.creatinineUrine*1000))))/1000;
         },
         tmpgfr() {
             //trp = 1-((this.po4Urine*this.creatinineSerum/1000)/(this.po4Serum*this.creatinineUrine));
