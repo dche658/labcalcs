@@ -1,5 +1,5 @@
 <template>
-  <Panel header="Calculations Version 4.4">
+  <Panel header="Calculations Version 4.5">
 <div>
   <p>
     These pages are a collection of simple calculations frequently used in chemical pathology laboratories. 
