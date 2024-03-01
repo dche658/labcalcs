@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div>
       <Menubar :model="items">
         <template #start>
@@ -23,16 +22,13 @@
         </template>
       </Menubar>
     </div>
-    <div>
 
-    </div>
     <div class="flex grid p-2">
       <div class="col p-2">
         <Toast />
         <router-view />
       </div>
     </div>
-  </div>
 </template>
 
 <script>
