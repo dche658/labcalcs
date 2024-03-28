@@ -1,5 +1,5 @@
 <template>
-    <div>
+  <div>
       <Menubar :model="items">
         <template #start>
           <h3>
@@ -23,12 +23,12 @@
       </Menubar>
     </div>
 
-    <div class="flex grid p-2">
-      <div class="col p-2">
-        <Toast />
-        <router-view />
-      </div>
+  <div>
+    <div class="col p-2">
+      <Toast />
+      <router-view />
     </div>
+  </div>
 </template>
 
 <script>
@@ -98,6 +98,14 @@ export default {
               route: "/urinenitrogen"
             },
             {
+              label: "Urine Anion Gap",
+              route: "/urineag"
+            },
+            {
+              label: "Urine Osmolal Gap",
+              route: "/urineosmgap"
+            },
+            {
               label: "Transferrin Sat.",
               route: "/transferrinsaturation"
             }
@@ -121,7 +129,5 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
-  padding: 0px;
 }
 </style>

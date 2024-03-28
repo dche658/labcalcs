@@ -47,6 +47,12 @@ ncu -u
 
 ### Change Log
 
+28/3/2024 Version 4.6.1; Doug Chesher\
+Add urine osmolal gap
+
+25/3/2024 Version 4.6; Doug Chesher\
+Add urine anion gap
+
 1/3/2024 Version 4.5; Doug Chesher\
 Update reference interval for TmP/GFR
 

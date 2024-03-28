@@ -80,14 +80,19 @@ const router = createRouter({
       component: () => import("../components/UnitsConversion.vue")
     },
     {
+      path:"/urineag",
+      name:"urineag",
+      component: () => import("../components/UrineAnionGap.vue")
+    },
+    {
+      path:"/urineosmgap",
+      name:"urineosmgap",
+      component: () => import("../components/UrineOsmolalGap.vue")
+    },
+    {
       path: "/about",
       name: "about",
       component: () => import("../components/About.vue")
-    },
-    {
-      path: "/aps",
-      name: "aps",
-      component: () => import("../components/Aps.vue")
     }
   ]
 })

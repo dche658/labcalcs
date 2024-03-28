@@ -64,22 +64,23 @@
             </div>
         </div>
     </Panel>
-    <Panel>
-        <h3>Calculations</h3>
-        <p>Calculated osmolarity = (2 x Sodium) + Urea + Glucose + (1.25 x Ethanol)<br />
-            <span class="footnote">With all components measured in mmol/L</span>
-        </p>
+    <Card class="mt-2">
+        <template #title>Calculations</template>
+        <template #content>
+            <p>Calculated osmolarity = (2 x Sodium) + Urea + Glucose + (1.25 x Ethanol)<br />
+                <span class="footnote">With all components measured in mmol/L</span>
+            </p>
 
-        <p>Osmolar Gap = Measured Osmolality - Calculated Osmolarity</p>
-        <p>
-            Reference interval for osmolar gap is 0 - 10. Causes of a raised osmolar
-            gap include high concentrations of ethanol, methanol, ethylene glycol,
-            mannitol or glycine. The osmolar gap may also be high in pseudohyponatraemia
-            caused by very higher serum lipids or serum protein.
-        </p>
+            <p>Osmolar Gap = Measured Osmolality - Calculated Osmolarity</p>
+            <p>
+                Reference interval for osmolar gap is 0 - 10. Causes of a raised osmolar
+                gap include high concentrations of ethanol, methanol, ethylene glycol,
+                mannitol or glycine. The osmolar gap may also be high in pseudohyponatraemia
+                caused by very higher serum lipids or serum protein.
+            </p>
+        </template>
 
-
-    </Panel>
+    </Card>
 </template>
 <script type="text/javascript">
 export default {
