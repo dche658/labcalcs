@@ -47,6 +47,9 @@ ncu -u
 
 ### Change Log
 
+5/4/2024 Version 4.6.2; Doug Chesher\
+Fix Adjusted Phenytoin formatting and update to composition API
+
 28/3/2024 Version 4.6.1; Doug Chesher\
 Add urine osmolal gap
 

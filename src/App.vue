@@ -1,43 +1,6 @@
-<template>
-  <div>
-      <Menubar :model="items">
-        <template #start>
-          <h3>
-            <a href="/labcalcs/unitsconversion" style="all: unset;">Chem Path Calculations</a>
-          </h3>
-        </template>
-        <template #item="{ label, item, props, root, hasSubmenu }">
-          <router-link v-if="item.route" v-slot="routerProps" :to="item.route" custom>
-            <a :href="routerProps.href" v-bind="props.action">
-              <span v-bind="props.icon" />
-              <span v-bind="props.label">{{ label }}</span>
-            </a>
-          </router-link>
-          <a v-else :href="item.url" :target="item.target" v-bind="props.action">
-            <span v-bind="props.icon" />
-            <span v-bind="props.label">{{ label }}</span>
-            <span :class="[hasSubmenu && (root ? 'pi pi-fw pi-angle-down' : 'pi pi-fw pi-angle-right')]"
-              v-bind="props.submenuicon" />
-          </a>
-        </template>
-      </Menubar>
-    </div>
-
-  <div>
-    <div class="col p-2">
-      <Toast />
-      <router-view />
-    </div>
-  </div>
-</template>
-
-<script>
-export default {
-  name: "App",
-  data() {
-    return {
-      currentTab: "unitsconversion",
-      items: [
+<script setup>
+import { ref } from 'vue';
+const items = ref([
         {
           label: "Units Conversion",
           route: "/unitsconversion"
@@ -115,12 +78,41 @@ export default {
           label: "About",
           route: "/about"
         }
-      ],
-    }
-  },
-
-}
+      ]);
 </script>
+
+<template>
+  <div>
+      <Menubar :model="items">
+        <template #start>
+            <a href="/labcalcs/unitsconversion" style="all: unset;">
+              <img src="@/assets/logo.svg" height="48" width="48"/>
+            </a>
+        </template>
+        <template #item="{ label, item, props, root, hasSubmenu }">
+          <router-link v-if="item.route" v-slot="routerProps" :to="item.route" custom>
+            <a :href="routerProps.href" v-bind="props.action">
+              <span v-bind="props.icon" />
+              <span v-bind="props.label">{{ label }}</span>
+            </a>
+          </router-link>
+          <a v-else :href="item.url" :target="item.target" v-bind="props.action">
+            <span v-bind="props.icon" />
+            <span v-bind="props.label">{{ label }}</span>
+            <span :class="[hasSubmenu && (root ? 'pi pi-fw pi-angle-down' : 'pi pi-fw pi-angle-right')]"
+              v-bind="props.submenuicon" />
+          </a>
+        </template>
+      </Menubar>
+    </div>
+
+  <div>
+    <div class="col p-2">
+      <Toast />
+      <router-view />
+    </div>
+  </div>
+</template>
 
 <style>
 @import './assets/base.css';
