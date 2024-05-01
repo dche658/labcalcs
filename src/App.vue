@@ -85,7 +85,7 @@ const items = ref([
   <div>
       <Menubar :model="items">
         <template #start>
-            <a href="/labcalcs/unitsconversion" style="all: unset;">
+            <a v-bind:href="'/labcalcs/#'+items[0].route" style="all: unset;">
               <img src="@/assets/logo.svg" height="48" width="48"/>
             </a>
         </template>
